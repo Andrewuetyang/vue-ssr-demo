@@ -3,6 +3,7 @@ const path = require('path')
 const MFS = require('memory-fs')
 const webpack = require('webpack')
 const chokidar = require('chokidar')
+const proxy = require('http-proxy-middleware')
 const clientConfig = require('./webpack.client.config')
 const serverConfig = require('./webpack.server.config')
 
@@ -66,6 +67,8 @@ module.exports = function setupDevServer (app, templatePath, cb) {
 
   // hot middleware
   app.use(require('webpack-hot-middleware')(clientCompiler, { heartbeat: 5000 }))
+
+  app.use('/api', proxy('http://localhost:4000'))
 
   // watch and update server renderer
   const serverCompiler = webpack(serverConfig)

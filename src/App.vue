@@ -5,14 +5,10 @@
         <router-link to="/" exact>
           <img class="logo" src="~public/logo-48.png" alt="logo">
         </router-link>
-        <router-link to="/top">Top</router-link>
-        <router-link to="/new">New</router-link>
-        <router-link to="/show">Show</router-link>
-        <router-link to="/ask">Ask</router-link>
-        <router-link to="/job">Jobs</router-link>
-        <a class="github" href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">
-          Built with Vue.js
-        </a>
+        <router-link to="/home">首页</router-link>
+        <router-link to="/foo">张三</router-link>
+        <router-link to="/bar">李四</router-link>
+        <router-link to="/baz">王二</router-link>
       </nav>
     </header>
     <transition name="fade" mode="out-in">
