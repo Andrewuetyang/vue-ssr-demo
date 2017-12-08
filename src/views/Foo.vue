@@ -4,6 +4,7 @@
 
 <script>
   export default {
+    title: '张三',
     data () {
       return {
         id: 1
@@ -14,13 +15,8 @@
         return this.$store.state.users[this.id]
       } 
     },
-    created () {
-      this.getUser()
-    },
-    methods: {
-      getUser () {
-        this.$store.dispatch('FETCH_USER', {id: this.id})
-      }
+    asyncData ({store, route}) {
+      store.dispatch('FETCH_USER', {id: 1})
     }
   }
 </script>
